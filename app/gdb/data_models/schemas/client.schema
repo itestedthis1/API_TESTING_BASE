@@ -1,0 +1,137 @@
+
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "id": "7f644301-e3f1-4752-90d5-99fbfad91ab4",
+            "status": true,
+            "name": "John Doe",
+            "houseNumber": 23,
+            "location": "DT1 1SS",
+            "password": "Secret_Pa55w0rd",
+            "signup_ts": null,
+            "JobSheet": [
+                "79dc3d3a-c40b-47e8-8cf4-207c2de7e36",
+                "c85a5633-2803-4826-ae5a-82474c238d5",
+                "0348ae36-202a-4bfc-a92d-849607fd541"
+            ]
+        }
+    ],
+    "required": [
+        "id",
+        "status",
+        "name",
+        "houseNumber",
+        "location",
+        "password",
+        "signup_ts",
+        "JobSheet"
+    ],
+    "properties": {
+        "id": {
+            "$id": "#/properties/id",
+            "type": "string",
+            "title": "The id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "7f644301-e3f1-4752-90d5-99fbfad91ab4"
+            ]
+        },
+        "status": {
+            "$id": "#/properties/status",
+            "type": "boolean",
+            "title": "The status schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": false,
+            "examples": [
+                true
+            ]
+        },
+        "name": {
+            "$id": "#/properties/name",
+            "type": "string",
+            "title": "The name schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "John Doe"
+            ]
+        },
+        "houseNumber": {
+            "$id": "#/properties/houseNumber",
+            "type": "integer",
+            "title": "The houseNumber schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                23
+            ]
+        },
+        "location": {
+            "$id": "#/properties/location",
+            "type": "string",
+            "title": "The location schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "DT1 1SS"
+            ]
+        },
+        "password": {
+            "$id": "#/properties/password",
+            "type": "string",
+            "title": "The password schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Secret_Pa55w0rd"
+            ]
+        },
+        "signup_ts": {
+            "$id": "#/properties/signup_ts",
+            "type": "null",
+            "title": "The signup_ts schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": null,
+            "examples": [
+                null
+            ]
+        },
+        "JobSheet": {
+            "$id": "#/properties/JobSheet",
+            "type": "array",
+            "title": "The JobSheet schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    "79dc3d3a-c40b-47e8-8cf4-207c2de7e36",
+                    "c85a5633-2803-4826-ae5a-82474c238d5"
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/JobSheet/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/JobSheet/items/anyOf/0",
+                        "type": "string",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "79dc3d3a-c40b-47e8-8cf4-207c2de7e36",
+                            "c85a5633-2803-4826-ae5a-82474c238d5"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}

@@ -1,0 +1,125 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "id": "7f644301-e3f1-4752-90d5-99fbfad95uh8",
+            "active": true,
+            "assigned": false,
+            "client_id": "client_guid",
+            "date_required": "01/01/22",
+            "time_required": "13:45",
+            "assigned_to": "",
+            "assigned_on": "",
+            "worksheet": ""
+        }
+    ],
+    "required": [
+        "id",
+        "active",
+        "assigned",
+        "client_id",
+        "date_required",
+        "time_required",
+        "assigned_to",
+        "assigned_on",
+        "worksheet"
+    ],
+    "properties": {
+        "id": {
+            "$id": "#/properties/id",
+            "type": "string",
+            "title": "The id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "7f644301-e3f1-4752-90d5-99fbfad95uh8"
+            ]
+        },
+        "active": {
+            "$id": "#/properties/active",
+            "type": "boolean",
+            "title": "The active schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": false,
+            "examples": [
+                true
+            ]
+        },
+        "assigned": {
+            "$id": "#/properties/assigned",
+            "type": "boolean",
+            "title": "The assigned schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": false,
+            "examples": [
+                false
+            ]
+        },
+        "client_id": {
+            "$id": "#/properties/client_id",
+            "type": "string",
+            "title": "The client_id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "client_guid"
+            ]
+        },
+        "date_required": {
+            "$id": "#/properties/date_required",
+            "type": "string",
+            "title": "The date_required schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "01/01/22"
+            ]
+        },
+        "time_required": {
+            "$id": "#/properties/time_required",
+            "type": "string",
+            "title": "The time_required schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "13:45"
+            ]
+        },
+        "assigned_to": {
+            "$id": "#/properties/assigned_to",
+            "type": "string",
+            "title": "The assigned_to schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "assigned_on": {
+            "$id": "#/properties/assigned_on",
+            "type": "string",
+            "title": "The assigned_on schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        },
+        "worksheet": {
+            "$id": "#/properties/worksheet",
+            "type": "string",
+            "title": "The worksheet schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                ""
+            ]
+        }
+    },
+    "additionalProperties": true
+}

@@ -1,0 +1,225 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": {},
+    "examples": [
+        {
+            "id": "7f644301-e3f1-4752-90d5-99fbfad91ab4",
+            "status": true,
+            "title": "Any Clean",
+            "CompanyReg": 7999999,
+            "RegisteredAddress": "1 Main Street, Anytown, Anycounty, Anyland, XX9 9XX",
+            "password": "Secret_Pa55w0rd",
+            "signup_ts": null,
+            "AreasCovered": [
+                "DT1",
+                "DT2",
+                "DT3",
+                "DT4",
+                "DT5",
+                "DT6",
+                "DT7",
+                "DT8",
+                "DT9s",
+                "DT10",
+                "DT11",
+                "DT12"
+            ],
+            "WorkingDays": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "services": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ]
+        }
+    ],
+    "required": [
+        "id",
+        "status",
+        "title",
+        "CompanyReg",
+        "RegisteredAddress",
+        "password",
+        "signup_ts",
+        "AreasCovered",
+        "WorkingDays",
+        "services"
+    ],
+    "properties": {
+        "id": {
+            "$id": "#/properties/id",
+            "type": "string",
+            "title": "The id schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "7f644301-e3f1-4752-90d5-99fbfad91ab4"
+            ]
+        },
+        "status": {
+            "$id": "#/properties/status",
+            "type": "boolean",
+            "title": "The status schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": false,
+            "examples": [
+                true
+            ]
+        },
+        "title": {
+            "$id": "#/properties/title",
+            "type": "string",
+            "title": "The title schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Any Clean"
+            ]
+        },
+        "CompanyReg": {
+            "$id": "#/properties/CompanyReg",
+            "type": "integer",
+            "title": "The CompanyReg schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+                7999999
+            ]
+        },
+        "RegisteredAddress": {
+            "$id": "#/properties/RegisteredAddress",
+            "type": "string",
+            "title": "The RegisteredAddress schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "1 Main Street, Anytown, Anycounty, Anyland, XX9 9XX"
+            ]
+        },
+        "password": {
+            "$id": "#/properties/password",
+            "type": "string",
+            "title": "The password schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+                "Secret_Pa55w0rd"
+            ]
+        },
+        "signup_ts": {
+            "$id": "#/properties/signup_ts",
+            "type": "null",
+            "title": "The signup_ts schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": null,
+            "examples": [
+                null
+            ]
+        },
+        "AreasCovered": {
+            "$id": "#/properties/AreasCovered",
+            "type": "array",
+            "title": "The AreasCovered schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    "DT1",
+                    "DT2"
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/AreasCovered/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/AreasCovered/items/anyOf/0",
+                        "type": "string",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "DT1",
+                            "DT2"
+                        ]
+                    }
+                ]
+            }
+        },
+        "WorkingDays": {
+            "$id": "#/properties/WorkingDays",
+            "type": "array",
+            "title": "The WorkingDays schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    1,
+                    2
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/WorkingDays/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/WorkingDays/items/anyOf/0",
+                        "type": "integer",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            1,
+                            2
+                        ]
+                    }
+                ]
+            }
+        },
+        "services": {
+            "$id": "#/properties/services",
+            "type": "array",
+            "title": "The services schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": [],
+            "examples": [
+                [
+                    1,
+                    2
+                ]
+            ],
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/services/items",
+                "anyOf": [
+                    {
+                        "$id": "#/properties/services/items/anyOf/0",
+                        "type": "integer",
+                        "title": "The first anyOf schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            1,
+                            2
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "additionalProperties": true
+}
