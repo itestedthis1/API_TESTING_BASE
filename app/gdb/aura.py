@@ -14,32 +14,39 @@ class App:
         self.driver = GraphDatabase.driver(uri, auth=(user, password))
 
     def close(self):
-        # Don't forget to close the driver connection when you are finished with it
+        # Don't forget to close the driver connection
+        # when you are finished with it
         self.driver.close()
 
     def create_friendship(self, person1_name, person2_name):
         with self.driver.session() as session:
-            # Write transactions allow the driver to handle retries and transient errors
+            # Write transactions allow the driver
+            # to handle retries and transient errors
             result = session.write_transaction(
                 self._create_and_return_friendship, person1_name, person2_name)
             for row in result:
-                print("Created friendship between: {p1}, {p2}".format(p1=row['p1'], p2=row['p2']))
+                print("Created friendship between: {p1}, {p2}".format(
+                    p1=row['p1'], p2=row['p2']))
 
     @staticmethod
     def _create_and_return_friendship(tx, person1_name, person2_name):
-        # To learn more about the Cypher syntax, see https://neo4j.com/docs/cypher-manual/current/
-        # The Reference Card is also a good resource for keywords https://neo4j.com/docs/cypher-refcard/current/
+        # To learn more about the Cypher syntax,
+        # see https://neo4j.com/docs/cypher-manual/current/
+        # The Reference Card is also a good resource
+        # for keywords https://neo4j.com/docs/cypher-refcard/current/
         query = (
             "CREATE (p1:Person { name: $person1_name }) "
             "CREATE (p2:Person { name: $person2_name }) "
             "CREATE (p1)-[:KNOWS]->(p2) "
             "RETURN p1, p2"
         )
-        result = tx.run(query, person1_name=person1_name, person2_name=person2_name)
+        result = tx.run(query, person1_name=person1_name,
+                        person2_name=person2_name)
         try:
             return [{"p1": row["p1"]["name"], "p2": row["p2"]["name"]}
                     for row in result]
-        # Capture any errors along with the query and data for traceability
+        # Capture any errors along with the query
+        # and data for traceability
         except ServiceUnavailable as exception:
             logging.error("{query} raised an error: \n {exception}".format(
                 query=query, exception=exception))
@@ -47,7 +54,9 @@ class App:
 
     def find_person(self, person_name):
         with self.driver.session() as session:
-            result = session.read_transaction(self._find_and_return_person, person_name)
+            result = session.read_transaction(
+                self._find_and_return_person, person_name
+                )
             for row in result:
                 print("Found person: {row}".format(row=row))
 
@@ -67,11 +76,11 @@ if __name__ == "__main__":
     # uri = "neo4j+ssc://aa91f78d.databases.neo4j.io"
     # user = "neo4j"
     uri = os.getenv('neo4j_gdbUri')
-    print (f"pword = {uri}")
+    print(f"pword = {uri}")
     user = os.getenv('neo4j_gdbUser')
-    print (f"pword = {user}")
+    print(f"pword = {user}")
     pword = os.getenv('neo4j_gdbPword')
-    print (f"pword = {pword}")
+    print(f"pword = {pword}")
     password = pword
     app = App(uri, user, password)
     app.create_friendship("Alice", "David")
